@@ -13,16 +13,33 @@
 
 	<body>
 		<div>
-			Git学习文档http://www.cnblogs.com/specter45/p/github.html#s4<br/> https://blog.csdn.net/qqb123456/article/details/25319659
+			Git学习文档http://www.cnblogs.com/specter45/p/github.html#s4
+			<br/> https://blog.csdn.net/qqb123456/article/details/25319659
 			<br/> 建立本地仓库,关联远程仓库
 			<br/> 创建新仓库的指令：
-			<br/> 　　git init //把这个目录变成Git可以管理的仓库<br/> 　　git add README.md //文件添加到仓库 远程仓库创建时候要建立一个README文件，然后再进行push操作<br/> 　　git add . //不但可以跟单一文件，还可以跟通配符，更可以跟目录。一个点就把当前目录下所有未追踪的文件全部add了 <br/> 　　git commit -m "first commit" //把文件提交到仓库<br/> 　　git remote add origin git@github.com:wangjiax9/practice.git //关联远程仓库<br/> 　　git push -u origin master //把本地库的所有内容推送到远程库上<br/> 常见报错
-
-			<br/> $ git push -u origin master<br/> To git@github.com:xxx/xxx.git<br/> ! [rejected] master -> master (fetch first)<br/> error: failed to push some refs to 'git@github.com:xxx/xxx.git'<br/> hint: Updates were rejected because the remote contains work that you do<br/> hint: not have locally. This is usually caused by another repository pushing<br/> hint: to the same ref. You may want to first integrate the remote changes<br/> hint: (e.g., 'git pull ...') before pushing again.<br/> hint: See the 'Note about fast-forwards' in 'git push --help' for details.<br/> 原因： <br/> GitHub远程仓库中的README.md文件不在本地仓库中。 <br/> 解决方案：
-			<br/> $ git pull --rebase origin master<br/> $ git push -u origin master<br/> --------------------- 作者：Vinx911 来源：CSDN 原文：https://blog.csdn.net/u011471873/article/details/51462871 版权声明：本文为博主原创文章，转载请附上博文链接！
-			<br/>  如果输入$ git remote add origin git@github.com:djqiang（github帐号名）/gitdemo（项目名）.git<br/>       提示出错信息：fatal: remote origin already exists.      解决办法如下：
-			<br/>      1、先输入$ git remote rm origin<br/>      2、再输入$ git remote add origin git@github.com:djqiang/gitdemo.git 就不会报错了！<br/>      3、如果输入$ git remote rm origin 还是报错的话，error: Could not remove config section 'remote.origin'. 我们需要修改gitconfig文件的内容<br/>     4、找到你的github的安装路径，我的是C:\Users\ASUS\AppData\Local\GitHub\PortableGit_ca477551eeb4aea0e4ae9fcd3358bd96720bb5c8\etc
-			<br/>     5、找到一个名为gitconfig的文件，打开它把里面的[remote "origin"]那一行删掉就好了！<br/> --------------------- 作者：dengjianqiang2011 来源：CSDN 原文：https://blog.csdn.net/dengjianqiang2011/article/details/9260435 版权声明：本文为博主原创文章，转载请附上博文链接！
+			<br/>git init //把这个目录变成Git可以管理的仓库 　　
+			<br/>git add README.md //文件添加到仓库 远程仓库创建时候要建立一个README文件，然后再进行push操作
+			<br/>git add . //不但可以跟单一文件，还可以跟通配符，更可以跟目录。一个点就把当前目录下所有未追踪的文件全部add了 
+			<br/> git commit -m "first commit" //把文件提交到仓库
+			<br/> git remote add origin git@github.com:wangjiax9/practice.git //关联远程仓库
+			<br/> git push -u origin master //把本地库的所有内容推送到远程库上<br/> 常见报错
+			<br/> $ git push -u origin master<br/> To git@github.com:xxx/xxx.git
+			<br/> ! [rejected] master -> master (fetch first)
+			<br/> error: failed to push some refs to 'git@github.com:xxx/xxx.git'<br/> hint: Updates were rejected because the remote contains work that you do
+			<br/> hint: not have locally. This is usually caused by another repository pushing<br/> hint: to the same ref. You may want to first integrate the remote changes
+			<br/> hint: (e.g., 'git pull ...') before pushing again.
+			<br/> hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+			<br/> 原因： <br/> GitHub远程仓库中的README.md文件不在本地仓库中。 
+			<br/> 解决方案：
+			<br/> $ git pull --rebase origin master
+			<br/> $ git push -u origin master<br/> --------------------- 作者：Vinx911 来源：CSDN 原文：https://blog.csdn.net/u011471873/article/details/51462871 版权声明：本文为博主原创文章，转载请附上博文链接！
+			<br/>  如果输入$ git remote add origin git@github.com:djqiang（github帐号名）/gitdemo（项目名）.git
+			<br/>       提示出错信息：fatal: remote origin already exists.      解决办法如下：
+			<br/>      1、先输入$ git remote rm origin
+			<br/>      2、再输入$ git remote add origin git@github.com:djqiang/gitdemo.git 就不会报错了！
+			<br/>      3、如果输入$ git remote rm origin 还是报错的话，error: Could not remove config section 'remote.origin'. 我们需要修改gitconfig文件的内容<br/>     4、找到你的github的安装路径，我的是C:\Users\ASUS\AppData\Local\GitHub\PortableGit_ca477551eeb4aea0e4ae9fcd3358bd96720bb5c8\etc
+			<br/>     5、找到一个名为gitconfig的文件，打开它把里面的[remote "origin"]那一行删掉就好了！
+			<br/> --------------------- 作者：dengjianqiang2011 来源：CSDN 原文：https://blog.csdn.net/dengjianqiang2011/article/details/9260435 版权声明：本文为博主原创文章，转载请附上博文链接！
 			</p>
 		</div>
 	</body>
